@@ -1,0 +1,12 @@
+.vendor-management {
+    padding: 20px;
+  }
+  
+  .vendor-section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  

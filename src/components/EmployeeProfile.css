@@ -1,0 +1,17 @@
+.employee-profile {
+    padding: 20px;
+  }
+  
+  .profile-section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .experience-section, .education-section, .certificate-section {
+    margin-top: 10px;
+    padding: 10px;
+    border-top: 1px solid #e0e0e0;
+  }

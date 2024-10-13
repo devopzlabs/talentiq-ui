@@ -1,0 +1,37 @@
+.job-board {
+    padding: 20px;
+  }
+  
+  .job-posting {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .company-name {
+    font-style: italic;
+    color: #757575;
+  }
+  
+  .job-location,
+  .job-type {
+    margin: 10px 0;
+  }
+  
+  .view-details-link {
+    color: #0073b1;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .view-details-link:hover {
+    text-decoration: underline;
+  }
