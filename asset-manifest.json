@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/talentiq-ui/static/css/main.9ad6c67a.css",
+    "main.js": "/talentiq-ui/static/js/main.6a6756a4.js",
+    "static/js/453.df124895.chunk.js": "/talentiq-ui/static/js/453.df124895.chunk.js",
+    "index.html": "/talentiq-ui/index.html",
+    "main.9ad6c67a.css.map": "/talentiq-ui/static/css/main.9ad6c67a.css.map",
+    "main.6a6756a4.js.map": "/talentiq-ui/static/js/main.6a6756a4.js.map",
+    "453.df124895.chunk.js.map": "/talentiq-ui/static/js/453.df124895.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ad6c67a.css",
+    "static/js/main.6a6756a4.js"
+  ]
+}
