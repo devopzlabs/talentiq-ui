@@ -1,15 +1,35 @@
 .sidebar {
   width: 240px;
-  background-color: #2a2a72;
+  background-color: #be4c12;
   color: white;
   padding: 20px;
   height: 100vh;
+  transition: width 0.3s;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.collapse-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .sidebar-logo {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
+  transition: opacity 0.3s;
 }
 
 .sidebar-menu {
@@ -20,6 +40,11 @@
 .sidebar-menu li {
   font-size: 18px;
   padding: 10px 0;
+  transition: background-color 0.3s;
+}
+
+.sidebar-menu li.selected {
+  background-color: #9e3c0e;
 }
 
 .sidebar-link {
@@ -28,4 +53,19 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.sidebar-link .link-text {
+  display: inline;
+  transition: opacity 0.3s;
+}
+
+.sidebar.collapsed .link-text {
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+}
+
+.sidebar-menu li:hover {
+  background-color: #9e3c0e;
 }

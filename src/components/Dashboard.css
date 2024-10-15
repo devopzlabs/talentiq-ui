@@ -1,14 +1,97 @@
+/* General Dashboard Styling */
 .dashboard {
   padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Header Styling */
+.dashboard h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.dashboard p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Button Styling */
 .dashboard-buttons {
-  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .dashboard-buttons button {
-  margin-right: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-buttons button:hover {
+  background-color: #0056b3;
+}
+
+/* Widget Styling */
+.job-count-widget,
+.employee-count-widget,
+.vendor-count-widget,
+.news-widget {
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.job-count-widget h3,
+.employee-count-widget h3,
+.vendor-count-widget h3,
+.news-widget h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+.job-count-widget p,
+.employee-count-widget p,
+.vendor-count-widget p {
+  font-size: 16px;
+  color: #007bff;
+}
+
+/* News Widget Styling */
+.news-widget ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.news-widget li {
+  margin-bottom: 10px;
+}
+
+.news-widget li a {
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.news-widget li a:hover {
+  text-decoration: underline;
+}
+
+.news-widget li p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0 0;
 }
