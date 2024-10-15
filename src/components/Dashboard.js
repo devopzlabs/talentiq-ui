@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
-import "./Dashboard.css";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+import './Dashboard.css';
+import Chatbot from './Chatbot'; // Ensure the path is correct based on your project structure
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -20,17 +21,19 @@ const Dashboard = () => {
     const fetchNews = async () => {
       try {
         const response = await axios.get(
-          "https://newsapi.org/v2/everything",
+          "https://data.alpaca.markets/v1beta1/news",
           {
+            headers: {
+              "APCA-API-KEY-ID": process.env.ALPACA_API_KEY || "PK7WK8URRYC1DTKMI8RF",
+              "APCA-API-SECRET-KEY": process.env.ALPACA_SECRET_KEY || "q9T5rD2XFnFS5QJx6BbFDNLiPuA0GJ4CFWewuTjl",
+            },
             params: {
-              q: "hiring OR recruitment",
-              sortBy: "publishedAt",
-              apiKey: "YOUR_NEWS_API_KEY", // Replace with your actual API key from a news service like NewsAPI
-              pageSize: 5,
+              symbols: "hiring,recruitment",
+              limit: 5,
             },
           }
         );
-        setNews(response.data.articles);
+        setNews(response.data.news);
       } catch (error) {
         console.error("Error fetching news:", error);
       }
@@ -85,13 +88,16 @@ const Dashboard = () => {
           {news.map((article, index) => (
             <li key={index}>
               <a href={article.url} target="_blank" rel="noopener noreferrer">
-                {article.title}
+                {article.headline}
               </a>
-              <p>{article.source.name}</p>
+              <p>{article.source}</p>
             </li>
           ))}
         </ul>
       </div>
+
+      {/* Chatbot Component */}
+      <Chatbot />
     </div>
   );
 };

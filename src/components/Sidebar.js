@@ -62,15 +62,24 @@ const Sidebar = () => {
             {!isCollapsed && <span className="link-text">Job Board</span>}
           </Link>
         </li>
-        <li className={location.pathname === "/ai-screener" ? "selected" : ""}>
-          <Link to="/ai-screener" className="sidebar-link">
-            <FaUser />{" "}
-            {!isCollapsed && <span className="link-text">AI Screener</span>}
-          </Link>
-        </li>
-      </ul>
-    </div>
-  );
+<li className={location.pathname === "/ai-screener" ? "selected" : ""}>
+  <Link to="/ai-screener" className="sidebar-link">
+    <FaUser /> 
+    {!isCollapsed && <span className="link-text">AI Screener</span>}
+  </Link>
+  {/* Questions subsection */}
+  {!isCollapsed && (
+    <ul>
+      <li className={location.pathname === "/ai-screener/questions" ? "selected" : ""}>
+        <Link to="/ai-screener" className="sidebar-link">
+          {!isCollapsed && <span className="link-text">Question Bank</span>}
+        </Link>
+      </li>
+    </ul>
+  )}
+</li>
+</ul>
+</div>
+);
 };
-
 export default Sidebar;
