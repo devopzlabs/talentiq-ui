@@ -11,6 +11,8 @@ import AddJob from "./components/AddJob";
 import AddEmployee from "./components/AddEmployee";
 import AddVendor from "./components/AddVendor";
 import AIScreener from "./components/AIScreener";
+import CreateProject from "./components/CreateProject";
+import AllProjects from "./components/AllProjects";
 
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -32,6 +34,8 @@ function App() {
             <Route path="/add-vendor" element={<AddVendor />} />
             <Route path="/vendor/:vendorId" element={<VendorDetails />} />
             <Route path="/ai-screener" element={<AIScreener />} />
+            <Route path="/projects/create" element={<CreateProject />} />
+            <Route path="/projects/all" element={<AllProjects />} />
             
           </Routes>
         </div>

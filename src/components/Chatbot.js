@@ -26,7 +26,7 @@ const Chatbot = () => {
   return (
     <div className={`chatbot-container ${isOpen ? 'open' : ''}`}>
       <button onClick={handleToggleOpen} className="chatbot-toggle">
-        {isOpen ? 'Close Chat' : 'Open Chat'}
+        {isOpen ? 'Close Chat' : 'TalentIQ Agent Chat'}
       </button>
 
       {isOpen && (

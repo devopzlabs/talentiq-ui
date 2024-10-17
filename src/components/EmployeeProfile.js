@@ -11,6 +11,8 @@ const EmployeeProfile = () => {
     email: "",
     jobLocation: "",
     skills: "",
+    jobStatus: "",
+    employmentType: "",
   });
 
   const employees = useSelector((state) => state.employee.profiles);
@@ -57,7 +59,10 @@ const EmployeeProfile = () => {
         employee.skills
           .join(", ")
           .toLowerCase()
-          .includes(filters.skills.toLowerCase()))
+          .includes(filters.skills.toLowerCase())) &&
+      (filters.jobStatus === "" || employee.jobStatus === filters.jobStatus) &&
+      (filters.employmentType === "" ||
+        employee.employmentType === filters.employmentType)
     );
   });
 
@@ -118,6 +123,34 @@ const EmployeeProfile = () => {
                 onChange={handleFilterChange}
               />
             </div>
+            <div className="filter">
+              <label htmlFor="jobStatus">Job Status:</label>
+              <select
+                id="jobStatus"
+                name="jobStatus"
+                value={filters.jobStatus}
+                onChange={handleFilterChange}
+              >
+                Select Job Status<option value="Open to Work">Open to Work</option><option value="Placed">Placed</option><option value="Not Available">Not Available</option>
+                <option value="Open to Work">Open to Work</option>
+                <option value="Placed">Placed</option>
+                <option value="Not Available">Not Available</option>
+              </select>
+            </div>
+            <div className="filter">
+              <label htmlFor="employmentType">Employment Type:</label>
+              <select
+                id="employmentType"
+                name="employmentType"
+                value={filters.employmentType}
+                onChange={handleFilterChange}
+              >
+                Select Employment Type<option value="Contractor">Contractor</option><option value="Full Time">Full Time</option><option value="Part Time">Part Time</option>
+                <option value="Contractor">Contractor</option>
+                <option value="Full Time">Full Time</option>
+                <option value="Part Time">Part Time</option>
+              </select>
+            </div>
           </div>
         )}
       </div>
@@ -158,6 +191,12 @@ const EmployeeProfile = () => {
           </p>
           <p>
             <strong>Bio:</strong> {selectedEmployee.bio}
+          </p>
+          <p>
+            <strong>Job Status:</strong> {selectedEmployee.jobStatus}
+          </p>
+          <p>
+            <strong>Employment Type:</strong> {selectedEmployee.employmentType}
           </p>
 
           <h4>Skills</h4>
@@ -262,6 +301,8 @@ const EmployeeProfile = () => {
               <th>Phone</th>
               <th>Interested Job Location</th>
               <th>Skills</th>
+              <th>Job Status</th>
+              <th>Employment Type</th>
             </tr>
           </thead>
           <tbody>
@@ -280,6 +321,8 @@ const EmployeeProfile = () => {
                 <td>
                   {employee.skills ? employee.skills.join(", ") : "No skills"}
                 </td>
+                <td>{employee.jobStatus}</td>
+                <td>{employee.employmentType}</td>
               </tr>
             ))}
           </tbody>

@@ -1,0 +1,31 @@
+/* src/components/ProjectCreation.css */
+.project-creation {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.progress-step {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 2px solid lightgray;
+  color: gray;
+}
+
+.progress-step.active {
+  border-bottom: 2px solid blue;
+  color: black;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
