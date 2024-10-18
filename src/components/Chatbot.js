@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Chatbot.css';
+import axios from 'axios';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
@@ -19,8 +20,35 @@ const Chatbot = () => {
   };
 
   const generateBotResponse = async (input) => {
-    // Assuming server-side API integration for response
-    setMessages((msgs) => [...msgs, { author: 'bot', text: 'This is a static response.' }]);
+    try {
+      const dialogflowResponse = await axios.post(
+        'https://dialogflow.googleapis.com/v2/projects/YOUR_PROJECT_ID/agent/sessions/YOUR_SESSION_ID:detectIntent',
+        {
+          queryInput: {
+            text: {
+              text: input,
+              languageCode: 'en',
+            },
+          },
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer YOUR_DIALOGFLOW_API_TOKEN`,
+          },
+        }
+      );
+
+      const botReply =
+        dialogflowResponse.data.queryResult.fulfillmentText || 'Sorry, I did not understand that.';
+      setMessages((msgs) => [...msgs, { author: 'bot', text: botReply }]);
+    } catch (error) {
+      console.error('Error communicating with Dialogflow API', error);
+      setMessages((msgs) => [
+        ...msgs,
+        { author: 'bot', text: 'There was an error connecting to the server.' },
+      ]);
+    }
   };
 
   return (
